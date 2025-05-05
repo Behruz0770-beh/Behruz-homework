@@ -25,6 +25,23 @@ Windows Authentication – Foydalanuvchi Windows tizimidagi login orqali avtomat
 SQL Server Authentication – Maxsus foydalanuvchi nomi va parol orqali ulaniladi.
 
 
+
+4.CREATE database SchoolDB
+
+
+
+5.CREATE TABLE students (
+    StudentID INT PRIMARY KEY,
+	Name VARCHAR(50),
+    Age INT
+	 );
+
+
+6.SQL Server;  	Ma’lumotlarni saqlaydigan va boshqaradigan tizim.	
+SSMS:      SQL Server bilan ishlash uchun dasturiy vosita,	         Unda siz SQL kod yozasiz.
+SQL;  	  Ma’lumotlar bilan ishlash uchun yoziladigan buyruqlar.	
+
+
 DQL-	Ma’lumot so‘rash	                         SELECT	SELECT * FROM Students;
 DML-	Ma’lumot qo‘shish/o‘chirish/yangilash    	INSERT, UPDATE, DELETE	INSERT INTO Students...
 DDL-	Tuzilma yaratish/o‘zgartirish	            CREATE, ALTER, DROP	CREATE TABLE...
