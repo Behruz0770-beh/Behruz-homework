@@ -1,3 +1,0 @@
-Maab
-lesson 
-sq l
