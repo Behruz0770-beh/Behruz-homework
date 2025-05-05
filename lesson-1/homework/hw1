@@ -1,1 +1,14 @@
+CREATE database SchoolDB
 
+
+
+CREATE TABLE students (
+    StudentID INT PRIMARY KEY,
+	Name VARCHAR(50),
+    Age INT
+	 );
+
+
+SQL Server;  	Ma’lumotlarni saqlaydigan va boshqaradigan tizim.	
+SSMS:      SQL Server bilan ishlash uchun dasturiy vosita,	         Unda siz SQL kod yozasiz.
+SQL;  	  Ma’lumotlar bilan ishlash uchun yoziladigan buyruqlar.	       
