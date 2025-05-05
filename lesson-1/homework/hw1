@@ -11,4 +11,9 @@ CREATE TABLE students (
 
 SQL Server;  	Ma’lumotlarni saqlaydigan va boshqaradigan tizim.	
 SSMS:      SQL Server bilan ishlash uchun dasturiy vosita,	         Unda siz SQL kod yozasiz.
-SQL;  	  Ma’lumotlar bilan ishlash uchun yoziladigan buyruqlar.	       
+SQL;  	  Ma’lumotlar bilan ishlash uchun yoziladigan buyruqlar.	
+
+
+Restore AdventureWorksDW2022.bak file to your server?
+C diskga yuklab olinadi keyin SSMS ga kirib database ustiga ong tugmani bosamiz va restore qilishni bosamiz va
+ "C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\Backup" shu tartibda kirib file ustiga bosamiz va add ni bosamiz va boldi.
