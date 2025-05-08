@@ -47,11 +47,10 @@ Qaytarib bo‘ladimi?
 Yo‘q. Jadval o‘chiriladi va qayta tiklash uchun backup kerak bo‘ladi.
 
 6.Modify the Name column in the Employees table to VARCHAR(100).
-ALTER TABLE employees
-DROP COLUMN name
 
-aLTER TABLE employees
-add name VARCHAR(100)
+
+ALTER TABLE employees
+ALTER COLUMN NAME VARCHAR(100)
 
 7.Add a new column Department (VARCHAR(50)) to the Employees table.
 ALTER TABLE Employees
