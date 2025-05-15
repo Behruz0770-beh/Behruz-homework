@@ -63,11 +63,49 @@ Qo‘lda qiymat kiritish kerak emas: Foydalanuvchi bu ustunga qiymat bermaydi �
  price decimal(10,2)
  );
 
-13.primery key va unique key farqi
+13.primery key va unique key farqi.PRIMARY KEY (Asosiy kalit)
+Bir martalik bo‘ladi: Har bir jadvalda faqat bitta PRIMARY KEY bo‘lishi mumkin.
+
+NULL qiymatlar bo‘lmaydi: PRIMARY KEY ustunida NULL qiymatlar bo‘lishi mumkin emas.
+
+Yagona identifikator: PRIMARY KEY jadvaldagi har bir qatorni noyob (unikal) tarzda aniqlaydi.
+
+Avtomatik indekslanadi: PRIMARY KEY yaratilganda u avtomatik indekslanadi.
+UNIQUE KEY (Noyob kalit)
+Bir nechta bo‘lishi mumkin: Jadvalda bir nechta UNIQUE KEY bo‘lishi mumkin.
+
+NULL qiymatga ruxsat bor: UNIQUE KEY ustunida bitta yoki bir nechta NULL qiymatlar bo‘lishi mumkin (bu ba'zi SQL tizimlarida farq qilishi mumkin).
+
+Noyoblikni ta'minlaydi: Ustundagi qiymatlar takrorlanmasligini kafolatlaydi.
+
+Indeks yaratiladi: UNIQUE KEY ham indeks hosil qiladi, ammo PRIMARY KEY emas.
+
+14.alter table productss
+add constraint price check (price>0)
+
+ 15.alter table productss
+add  stock int not null.
+
+16.SELECT isnull(price,0) as price
+FROM PhoneNumbers;
+
+17.FOREIGN KEY — bu boshqa jadvaldagi ma'lumotga bog‘liq bo‘lgan ustun. Ya'ni, u bir jadvaldagi qiymatning ikkinchi jadvaldagi mavjud qiymatga mos bo‘lishini ta’minlaydi.
+FOREIGN KEY boshqa jadvaldagi PRIMARY KEY yoki UNIQUE ustunga bog‘lanadi.
+
+U o‘zi turgan jadvalda ma’lumotni cheklaydi: faqat bog‘langan jadvalda mavjud qiymatlar qabul qilinadi.
+
+🧠 Xulosa:
+FOREIGN KEY — bu ikki jadval orasidagi bog‘liqlikni yaratadigan vosita.
+
+U ma’lumotlar bazasida yaxlitlikni saqlaydi, noto‘g‘ri yoki yetishmaydigan bog‘lamalarni oldini oladi.
+
+Bu ayniqsa katta va bog‘langan tizimlarda juda muhim.
 
 
 
 
+
+18.
 
 
 
