@@ -105,7 +105,103 @@ Bu ayniqsa katta va bog‘langan tizimlarda juda muhim.
 
 
 
-18.
+18.create table customers (customerID int identity,name varchar(10),age int check(age >=18))
+
+19.create table homework3 (customerID int identity(100,10),name varchar(10),age int check(age >=18))
+
+20.create table OrderDetails (customerID int identity(100,10),name varchar(10) primary key,age int check(age >=18))
+
+21.ALESCE funksiyasi*🎯 Maqsadi:
+
+`COALESCE` funksiyasi berilgan ifodalar ro‘yxatidan **birinchi `NULL` bo‘lmagan qiymatni** qaytaradi.
+
+### 🧾 Sintaksisi:
+
+```sql
+COALESCE(ifoda1, ifoda2, ..., ifodaN)
+```
+
+* Ifodalar **chapdan o‘ngga** qarab tekshiriladi.
+* Birinchi `NULL` bo‘lmagan qiymat qaytariladi.
+* Agar hamma ifodalar `NULL` bo‘lsa, natija ham `NULL` bo‘ladi.
+
+---
+
+## 🔹 **2. ISNULL funksiyasi**
+
+### 🎯 Maqsadi:
+
+`ISNULL` funksiyasi agar ifoda `NULL` bo‘lsa, uni **belgilangan qiymat bilan almashtiradi**.
+
+### 🧾 Sintaksisi:
+
+```sql
+ISNULL(ifoda, o‘rniga_qiymat)
+```
+
+* Agar `ifoda` `NULL` bo‘lsa, o‘rniga ko‘rsatilgan qiymatni qaytaradi.
+* Agar `ifoda` `NULL` bo‘lmasa, shu ifodaning o‘zi qaytariladi.
+
+---
+
+## 🔸 Misol:
+
+Quyidagi jadvalni tasavvur qiling:
+
+| Ism   | Laqab |
+| ----- | ----- |
+| Jon   | NULL  |
+| Alisa | Ali   |
+
+### ISNULL bilan:
+
+```sql
+SELECT Name, ISNULL(Nickname, 'Laqabi yo‘q') AS DisplayName FROM People;
+```
+
+### COALESCE bilan:
+
+```sql
+SELECT Name, COALESCE(Nickname, 'Laqabi yo‘q') AS DisplayName FROM People;
+```
+
+**Natija**:
+
+| Name  | DisplayName |
+| ----- | ----------- |
+| Jon   | Laqabi yo‘q |
+| Alisa | Ali         |
+
+---
+
+## 🔍 Asosiy farqlari:
+
+| Xususiyat          | ISNULL              | COALESCE                      |
+| ------------------ | ------------------- | ----------------------------- |
+| Argumentlar soni   | Faqat 2 ta          | 2 yoki undan ortiq            |
+| Standartga mosligi | Yo‘q                | Ha (ANSI SQL standarti)       |
+| Qaytarilgan turi   | 1-argumentning turi | Eng yuqori ustuvorlikdagi tur |
+
+---
+
+22.create table Employees (EmpID int primary key,Email varchar(100) UNIQUE )
+
+23.CREATE TABLE departments (
+    id INT PRIMARY KEY,
+    name VARCHAR(100)
+);
+
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    department_id INT,
+    FOREIGN KEY (department_id)
+        REFERENCES departments(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+
 
 
 
