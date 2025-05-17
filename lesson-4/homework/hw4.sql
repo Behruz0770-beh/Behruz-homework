@@ -60,8 +60,46 @@ where price<=1000 and stockquantity>50
 17.select*from products
 where productname like '%e%'
 
-18.  
+18.SELECT *
+FROM employees
+WHERE departmentname IN ('HR', 'IT', 'Finance');
 
+19.
+select *from customers
+order by city asc, postalcode desc 
+
+20.select top 5* from sales
+order by saleamount desc
+
+21.select concat(firstname,' ',lastname) as fullname
+from Employees
+
+22.select distinct category,productname , price 
+from products
+where price>50
+
+23.SELECT AVG(Price) FROM Products;
+
+SELECT *FROM Products
+WHERE Price < (199.6) *0.10;
+
+24.select*from Employees
+where age<30 and departmentname in ('hr','it');
+
+25.select *from customers
+where email like '%@gmail.com%'
+
+26.SELECT *
+FROM Employees
+WHERE Salary > ALL (
+    SELECT Salary
+    FROM Employees
+    WHERE Departmentname = 'finance'
+);
+
+27.SELECT *
+FROM Orders
+WHERE OrderDate BETWEEN DATEADD(DAY, -180, GETDATE()) AND GETDATE();
 
 
 
