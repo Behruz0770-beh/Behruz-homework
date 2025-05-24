@@ -27,7 +27,110 @@ group by customerid;
 group by departmentname
 having count(departmentname)>5
 
-11.
+11.select*from sales
+SELECT 
+    productid,
+    SUM(saleamount) AS total_sales,
+    AVG(saleamount) AS average_sales
+FROM 
+    sales
+GROUP BY 
+    productid;
+
+12.select*from employees
+select departmentname,count(departmentname) from employees
+group by departmentname
+having departmentname= 'HR'
+
+13.select departmentname,
+max(salary)max_salary,
+min(salary)min_salary 
+from employees
+group by departmentname
+
+14.
+select departmentname,
+sum(salary)total_salary,
+avg(salary)avg_salary 
+from
+     employees
+group by departmentname
+
+15.select departmentname, count(*)totel_employees,avg(salary)avg_salary from employees
+group by departmentname;
+select count(*) totel_employees, avg(salary) avg_salary from employees;
+
+
+16.select category,sum(price)total_price,avg(price)avg_price from products
+group by category
+having avg(price)>400
+
+17.
+select*
+from sales
+select year(saledate)years, sum(saleamount)total_sale from sales
+group by year(saledate)
+
+
+18.
+select*from orders
+select customerid,sum(quantity)total_quantity from orders
+group by customerid
+having sum(quantity)>2
+
+19.select departmentname,
+sum(salary)total_salary,
+avg(salary)avg_salary 
+from
+     employees
+group by departmentname
+having avg(salary)>60000;
+
+
+20.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
