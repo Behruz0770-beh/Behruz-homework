@@ -87,7 +87,39 @@ group by departmentname
 having avg(salary)>60000;
 
 
-20.
+20.select category,sum(price)total,avg(price)agerage from products
+group by category
+having avg(price)>150;
+
+21.select customerid,sum(saleamount)total_sales from sales
+group by customerid
+having sum(saleamount)>1500;
+
+22.select departmentname,sum(salary)total_salary,avg(salary)avg_salary from employees
+group by departmentname
+having avg(salary)>65000
+
+
+23.select custid,sum(case when freight>50 then freight else 0 end)total_freight,
+min(freight)least_freight  from sales.orders
+group by custid;
+
+24.SELECT
+    YEAR(OrderDate) AS SalesYear,
+    MONTH(OrderDate) AS SalesMonth,
+    SUM(TotalAmount) AS TotalSales,
+    COUNT(DISTINCT ProductID) AS UniqueProductsSold
+FROM
+    Orders
+GROUP BY
+    YEAR(OrderDate),
+    MONTH(OrderDate)
+HAVING
+    COUNT(DISTINCT ProductID) >= 2;
+
+25.select year(orderdate)years,min(quantity)min_quantity,max(quantity)max_quantity from orders
+group by year(orderdate);
+
 
 
 
