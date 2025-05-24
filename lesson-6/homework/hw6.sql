@@ -24,4 +24,4 @@ select*from section1
 where name like 'b%'
 
 7.select*from productcodes
-where code like '%/_%' escape '/'
+where code like '%/_%' escape '/';
