@@ -73,7 +73,19 @@ where country='USA';
 where country='Germany'and totalamount>100;
 
 
-21.
+21.SELECT 
+    e1.Name AS Employee1,
+    e2.Name AS Employee2,
+    e1.DepartmentID AS Dept1,
+    e2.DepartmentID AS Dept2
+FROM 
+    employees e1
+JOIN 
+    employees e2 
+    ON e1.EmployeeID < e2.EmployeeID  -- Avoid duplicate/reverse pairs and self-pairs
+WHERE 
+    e1.DepartmentID <> e2.DepartmentID;
+
 22.
 23.
 24.
