@@ -33,6 +33,61 @@ INNER JOIN payments ON orders.OrderID = payments.OrderID;
 on products.productid=orders.productid
 where products.price>100;
 
+11.select name,departmentname from departments inner join employees  
+on departments.departmentId<> employees.departmentId;
+select name,departmentname from departments cross join employees 
+where departments.departmentId<> employees.departmentId;
+
+12.select productname, products.price from orders inner join products 
+on products.productID=orders.productID
+where price>stockquantity;
+
+13.select concat(firstname,' ',lastname)as customer_name,productID from Customers 
+inner join sales on Customers.customerid= sales.customerid
+where saleamount>=500;
+
+14.select name,coursename from Courses inner join Enrollments on  Courses.courseid=Enrollments.courseid
+                                    inner join Students on Enrollments.studentid=Students.studentid;
+
+15.select productname,suppliername from products inner join suppliers on products.supplierid= suppliers.supplierid
+where suppliername like '%tech%';
+
+16.SELECT Orders.OrderID, Orders.TotalAmount, Payments.PaymentAmount
+FROM Orders
+INNER JOIN Payments
+ON Orders.OrderID = Payments.OrderID
+WHERE Payments.PaymentAmount < Orders.TotalAmount;
+
+17.select departmentname,name from departments inner join employees on departments.departmentID=employees.departmentID;
+
+18.SELECT Products.ProductName, Categories.CategoryName
+FROM Products
+INNER JOIN Categories
+ON Products.CategoryID = Categories.CategoryID
+WHERE Categories.CategoryName IN ('Electronics', 'Furniture');
+
+19.select sales.customerid,firstname,email,phone,address,city,state,country,saleid,saleamount from customers inner join sales on sales.customerid=customers.customerid
+where country='USA';
+
+20.select orderid,firstname,city,country from orders inner join customers on orders.customerid=customers.customerid
+where country='Germany'and totalamount>100;
+
+
+21.
+22.
+23.
+24.
+25.
+
+
+
+
+
+
+
+
+
+
 
 
 
