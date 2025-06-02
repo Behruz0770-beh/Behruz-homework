@@ -86,10 +86,42 @@ JOIN
 WHERE 
     e1.DepartmentID <> e2.DepartmentID;
 
-22.
-23.
-24.
-25.
+22.select paymentid,productname,amount,stockquantity,paymentmethod
+from payments inner join orders on payments.orderid=orders.orderid
+              inner join products on products.productid=orders.productid  
+where amount <>(stockquantity*amount);
+
+23.SELECT students.studentid,courseid, students.name
+FROM students
+LEFT JOIN Enrollments ON students.studentid = Enrollments.studentid
+WHERE Enrollments.studentid IS NULL;
+
+24.SELECT 
+    m.EmployeeID AS ManagerID,
+    m.Name AS ManagerName,
+    m.Salary AS ManagerSalary,
+    e.EmployeeID AS EmployeeID,
+    e.Name AS EmployeeName,
+    e.Salary AS EmployeeSalary
+FROM 
+    Employees e
+JOIN 
+    Employees m ON e.ManagerID = m.EmployeeID
+WHERE 
+    m.Salary <= e.Salary;
+25.SELECT 
+    c.CustomerID,
+    c.Name,
+    o.OrderID
+FROM 
+    Customers c
+JOIN 
+    Orders o ON c.CustomerID = o.CustomerID
+LEFT JOIN 
+    Payments p ON o.OrderID = p.OrderID
+WHERE 
+    p.OrderID IS NULL;
+
 
 
 
