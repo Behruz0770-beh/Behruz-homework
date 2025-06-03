@@ -101,7 +101,50 @@ WHERE od.OrderID IS NULL;
 20.   select productid,orderdate,amount from orders full join payments on orders.orderid=payments.orderid
    where orderdate<'2020' and amount is null;
 
-21.
+21.SELECT ProductID, ProductName
+FROM Products
+WHERE CategoryID NOT IN (
+    SELECT CategoryID FROM Categories
+);
+22.SELECT 
+    e1.EmployeeName AS Employee1,
+    e2.EmployeeName AS Employee2,
+    e1.ManagerID,
+    e1.Salary
+FROM Employees e1
+JOIN Employees e2 ON 
+    e1.ManagerID = e2.ManagerID AND 
+    e1.EmployeeID <> e2.EmployeeID
+WHERE 
+    e1.Salary > 60000 AND 
+    e2.Salary > 60000;
+23.SELECT e.EmployeeName, d.DepartmentName
+FROM Employees e
+JOIN Departments d ON e.DepartmentID = d.DepartmentID
+WHERE d.DepartmentName LIKE 'M%';
+24.SELECT s.SaleID, p.ProductName, s.SaleAmount
+FROM Sales s
+JOIN Products p ON s.ProductID = p.ProductID
+WHERE s.SaleAmount > 500;
+25.SELECT s.StudentID, s.StudentName
+FROM Students s
+WHERE s.StudentID NOT IN (
+    SELECT e.StudentID
+    FROM Enrollments e
+    JOIN Courses c ON e.CourseID = c.CourseID
+    WHERE c.CourseName = 'Math 101'
+);
+
+26.SELECT o.OrderID, o.OrderDate, p.PaymentID
+FROM Orders o
+LEFT JOIN Payments p ON o.OrderID = p.OrderID
+WHERE p.PaymentID IS NULL;
+27.SELECT p.ProductID, p.ProductName, c.CategoryName
+FROM Products p
+JOIN Categories c ON p.CategoryID = c.CategoryID
+WHERE c.CategoryName IN ('Electronics', 'Furniture');
+
+
 
 
 
